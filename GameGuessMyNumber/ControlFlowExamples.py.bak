@@ -167,3 +167,26 @@ for i in range(1, 10+1):
 Python program to print the Fibonacci sequence
 '''
     
+number_for_fibonacci_sequence = float(raw_input('Enter a number for fibonacci sequence'))
+n1 = 0
+n2 = 1
+count_of_sequence = 2
+end = ' ,'
+# check if the number of terms is valid
+if number_for_fibonacci_sequence <= 0:
+    print 'Please enter a positive number'
+elif number_for_fibonacci_sequence == 1:
+    print 'Fibonacci sequence:'
+    print n1
+else:
+    print 'Fibonacci sequence:'
+    print  n1, ',', n2, end
+    while  count_of_sequence < number_for_fibonacci_sequence:
+        nth = n1 +n2
+        print nth, end
+        # update values
+        n1 = n2
+        n2 = nth
+        count_of_sequence += 1
+
+

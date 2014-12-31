@@ -7,6 +7,7 @@ The user wants to create an address book and downloads your program. How would  
 information in most address address books and then stores it a .txt file!
 
 regex uses for email validatior
+textwrap modul for formatting text paragraphs, functions are fill, wrap, indent deindent
 dictionary structure uses for store a person with additional information
 
 '''
@@ -19,9 +20,10 @@ print 'AdressBook'
 address_book_path = r'D:\python\adresses.txt'
 address_book = {} # address book held in memory before dumped to file (baceno u fajl)
 email_pattern = r'(\w[\w]*)@([\w]+\.[\w]+)'
-record_delimiter = '|' # split name | email in file
+record_delimiter = '|'
+ # split name | email in file
 
-
+record_delimiter = '|'
      
  
 def loadAddress():
@@ -30,22 +32,26 @@ def loadAddress():
     try:
         f = open(address_book_path, 'r')
         lines = f.readlines()
-        f.close()
+        f.close() # This line closes the file and clears the computer's memory
         success, lines = (True, lines)
         print success, line
-    except IOError  as e:
+    except IOError as e:
         print 'Error opening address books ', e
     return (success, line)
 
 ''' The latest style preference in Python is to use with statements for file handling, so that would become
 '''
 
+
+
 def main():
 
     (success, lines) = loadAddress()
     if not success:
-        should_make_new_book = raw_input(textwrap.fill(''' You do not have an address book yet. Would you like to create one?
-        '''))
+        should_make_new_book = raw_input(textwrap.fill(''' You do not have 
+an address book yet. 
+                            Would you like to
+create one?'''))
         if should_make_new_book in ('y', 'yes', 'ye'):
             f = open(address_book_path, 'w')
             f.close() # this is the reason why dictionary does not write in the file -- nije ovo resenje
@@ -81,9 +87,17 @@ def main():
     print address_book
                     
 def record_addresses():
-    f = open(address_book_path, 'w')
+
+    try:
+        f = open(address_book_path, 'a')
+    except IOError as e:
+        print 'There is a error, we could not open the file', e
+   
+    
     for k, v in sorted(address_book.items()):
         f.write("{0}{1}{2} \n".format(k, record_delimiter, v))
+    
+    
         
 
 """  Should  have a  try in case the file failes to open

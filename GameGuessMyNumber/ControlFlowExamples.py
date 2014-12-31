@@ -1,192 +1,248 @@
-'''
-Created on Dec 25, 2014
-
-@author: anicam
-'''
-
-'''
-Python program to check if a number is positive, negative or zero
-Python program to check if a number is positive, negative or zero
-'''
-    
-while True:
-    number = None
-    try:
-        response = raw_input('Enter the one number (press q, quit if you want to stop) ')
-        if response.lower() in ('q', 'quit'):
-            print 'Exiting...'
-            break
-        number = int(response)
-    # treba da bude float a ne int
-    except ValueError as e:
-        print 'There is the error', e
-        answer = raw_input('Press q, quit if you want to stop ')
-        if answer.lower() in ('q','quit'):
-            print 'Exiting...'
-            break
-        else:
-            continue
-    if (number%2) == 0:
-    # uslov treba da bude u zagradi
-        print 'Number is even'
-    else:
-        print 'Number is odd'
-    
-#     if number > 0:
+# '''
+# Created on Dec 25, 2014
+# 
+# @author: anicam
+# '''
+# 
+# '''
+# Python program to check if a number is positive, negative or zero
+# Python program to check if a number is positive, negative or zero
+# '''
+#    
+# import textwrap  
+# while True:
+#     number = None
+#     try:
+#         response = raw_input('Enter the one number (press q, quit if you want to stop) ')
+#         if response.lower() in ('q', 'quit'):
+#             print 'Exiting...'
+#             break
+#         number = int(response)
+#     # treba da bude float a ne int
+#     except ValueError as e:
+#         print 'There is the error', e
+#         answer = raw_input('Press q, quit if you want to stop ')
+#         if answer.lower() in ('q','quit'):
+#             print 'Exiting...'
+#             break
+#         else:
+#             continue
+#     if (number%2) == 0:
+#     # uslov treba da bude u zagradi
+#         print 'Number is even'
+#     else:
+#         print 'Number is odd'
+#      
+# #     if number > 0:
+# #         print 'You entered a positive number'
+# # #         continue
+# #     elif number < 0:
+# #         print 'You entered a negative number'
+# # #         continue
+# #     elif number == 0:
+# #         print 'You entered a zero'
+#          
+#     if number >= 0:
+#         if number == 0:
+#             print 'You entered a zero'
 #         print 'You entered a positive number'
 # #         continue
 #     elif number < 0:
 #         print 'You entered a negative number'
-# #         continue
-#     elif number == 0:
-#         print 'You entered a zero'
-        
-    if number >= 0:
-        if number == 0:
-            print 'You entered a zero'
-        print 'You entered a positive number'
-#         continue
-    elif number < 0:
-        print 'You entered a negative number'
-
-
-while True:
-    year = int(raw_input('Please enter the year '))
-    if year != 1:
-        if len(str(year)) != 4:
-            print 'Format of year is not correct. Try again'
-            continue
-        if (year % 4) == 0:
-            if (year % 100) == 0:
-                if(year % 400) == 0:
-                    print 'Entered year is leap year'
-            else:
-                    print 'Entered year is not leap year'
-        else:
-            print '{0} is not a leap year'.format(year)
-    else:
-        break
-        quit()
-         
-        
-  # ako je deljiva sa 4  izuzev ako je deljiva sa 100 a a nije za 400     
-  
-''' Python Program to find  the largest among three numbers
-'''
-a = int(raw_input('Enter a  first number'))
-b = int(raw_input('Enter a  second number'))
-c = int(raw_input('Enter a  third number'))
-d = None
-if  a < b:
-    d = b
-if b < c:
-    d = c
-
-print 'Max number of all is %d' % d
+#  
+#  
+# while True:
+#     year = int(raw_input('Please enter the year '))
+#     if year != 1:
+#         if len(str(year)) != 4:
+#             print 'Format of year is not correct. Try again'
+#             continue
+#         if (year % 4) == 0:
+#             if (year % 100) == 0:
+#                 if(year % 400) == 0:
+#                     print 'Entered year is leap year'
+#             else:
+#                     print 'Entered year is not leap year'
+#         else:
+#             print '{0} is not a leap year'.format(year)
+#     else:
+#         break
+#         quit()
+#           
+#          
+#   # ako je deljiva sa 4  izuzev ako je deljiva sa 100 a a nije za 400     
+#    
+# ''' Python Program to find  the largest among three numbers
+# '''
+# a = int(raw_input('Enter a  first number'))
+# b = int(raw_input('Enter a  second number'))
+# c = int(raw_input('Enter a  third number'))
+# d = None
+# if  a < b:
+#     d = b
+# if b < c:
+#     d = c
+#  
+# print 'Max number of all is %d' % d
+#      
+# '''
+# Python program to check prime number
+#  
+# '''
+#  
+# # take input from the user
+# number = int(raw_input('Enter a number: '))
+#  
+#  
+# # prime numbers are greater than 1
+#  
+# if number > 1:
+#     for i in range(2, number):
+#         if(number % i) == 0:
+#             print(number,"is not a prime number")
+#             print(i,"times",number//i,"is",number)
+#             break
+#     else:
+#             print (number, ' is a prime number')
+# #   Zanimljiva konstrukcija, obratiti paznju
+# # if input number is less or equal to 1, it is not prime number
+# else:
+#     print (number, ' is not a prime number')
+#  
+#  
+# '''
+# Python program to print all prime numbers in interval
+# '''
+#  
+# while True:
+#     lower_range = int(raw_input('Enter  lower range: '))
+#     upper_range = int(raw_input('Enter  upper range: '))
+#     if lower_range == 0 and upper_range == 0:
+#         print 'Exiting'
+#         break
+#     for num in range(lower_range, upper_range + 1):
+#         if num > 1:
+#             for i in range(2, num):
+#                 if num % i == 0:
+# #                     print num, 'is not a prime number'
+# #                     print i, 'times', num//i, 'is', num
+#                     break
+#             else:
+#                 print num, 'is a prime number'
+#         else:
+#             print num, ' is not prime number'
+#                  
+#                  
+#              
+#  
+# '''
+# Python program to find the factorial of a number
+# '''
+# while True:
+#     number = float(raw_input('Enter a number: '))
+#     if number == 00:
+#         break
+#     if number > 0:
+#         if number == 0:
+#             print 'Factorial of 0 is 1'
+#         else:
+#             factorial = 1
+#             for i in range(1,int(number + 1)):
+#                 factorial = factorial * i
+#             print 'Factorial of ', number, ' is', factorial
+#                  
+#     else:
+#         print 'Sorry, factorial does not exist of negative number '
+#  
+#  
+#          
+# '''
+# Python program to display multiplication table up to 10
+# '''
+#  
+# number_for_multiplication_table = int(raw_input('Enter a number for multiplication table'))
+# for i in range(1, 10+1):
+#     print  number_for_multiplication_table, 'X', i, '=', i*number_for_multiplication_table
+#   
+# '''
+# Python program to print the Fibonacci sequence
+# '''
+#      
+# number_for_fibonacci_sequence = float(raw_input('Enter a number for fibonacci sequence'))
+# n1 = 0
+# n2 = 1
+# count_of_sequence = 2
+# end = ' ,'
+# # check if the number of terms is valid
+# if number_for_fibonacci_sequence <= 0:
+#     print 'Please enter a positive number'
+# elif number_for_fibonacci_sequence == 1:
+#     print 'Fibonacci sequence:'
+#     print n1
+# else:
+#     print 'Fibonacci sequence:'
+#     print  n1, ',', n2, end
+#     while  count_of_sequence < number_for_fibonacci_sequence:
+#         nth = n1 +n2
+#         print nth, end
+#         # update values
+#         n1 = n2
+#         n2 = nth
+#         count_of_sequence += 1
+# 
+# ''' Python program to check Armstrong Number '''
+#         
+# number_for_armstrong_number = raw_input('Enter a number for Armstrong Number ')
+# print
+# armstrong_number = 0
+# for i in  range (len(number_for_armstrong_number)):
+# 
+#     print number_for_armstrong_number[i], pow(int(number_for_armstrong_number[i]), 3)
+#     armstrong_number +=  pow(int(number_for_armstrong_number[i]), 3)
+# print armstrong_number
+# if int(number_for_armstrong_number) == armstrong_number:
+#     print 'Number', number_for_armstrong_number,' is an Armstrong number'
+# else:
+#     print 'Number', number_for_armstrong_number,' is  not an Armstrong number'
     
-'''
-Python program to check prime number
-
-'''
-
-# take input from the user
-number = int(raw_input('Enter a number: '))
 
 
-# prime numbers are greater than 1
 
-if number > 1:
-    for i in range(2, number):
-        if(number % i) == 0:
-            print(number,"is not a prime number")
-            print(i,"times",number//i,"is",number)
-            break
-    else:
-            print (number, ' is a prime number')
-#   Zanimljiva konstrukcija, obratiti paznju
-# if input number is less or equal to 1, it is not prime number
-else:
-    print (number, ' is not a prime number')
+# 
+# ''' Python program to find an Armstrong Number in an interval '''
+#         
+# lower_range_number_for_armstrong_number = int(raw_input('Enter a lower range for Armstrong Number '))
+# upper_range_number_for_armstrong_number = int(raw_input('Enter a upper range for Armstrong Number '))
+# 
+# for number_for_armstrong_number in range(lower_range_number_for_armstrong_number,upper_range_number_for_armstrong_number):
+#     armstrong_number = 0
+#     for i in  range (len(str(number_for_armstrong_number))):
+#      
+# #         print str(number_for_armstrong_number)[i], pow(int(str(number_for_armstrong_number)[i]), 3)
+#         armstrong_number +=  pow(int(str(number_for_armstrong_number)[i]), 3)
+# #     print armstrong_number
+#     if int(number_for_armstrong_number) == armstrong_number:
+#         print 'Number', number_for_armstrong_number,' is an Armstrong number'
+# #     else:
+# #         print 'Number', number_for_armstrong_number,' is  not an Armstrong number'
 
 
 '''
-Python program to print all prime numbers in interval
+Python program to find the sum of natural number
 '''
 
-while True:
-    lower_range = int(raw_input('Enter  lower range: '))
-    upper_range = int(raw_input('Enter  upper range: '))
-    if lower_range == 0 and upper_range == 0:
-        print 'Exiting'
-        break
-    for num in range(lower_range, upper_range + 1):
-        if num > 1:
-            for i in range(2, num):
-                if num % i == 0:
-#                     print num, 'is not a prime number'
-#                     print i, 'times', num//i, 'is', num
-                    break
-            else:
-                print num, 'is a prime number'
-        else:
-            print num, ' is not prime number'
-                
-                
-            
-
-'''
-Python program to find the factorial of a number
-'''
-while True:
-    number = float(raw_input('Enter a number: '))
-    if number == 00:
-        break
-    if number > 0:
-        if number == 0:
-            print 'Factorial of 0 is 1'
-        else:
-            factorial = 1
-            for i in range(1,int(number + 1)):
-                factorial = factorial * i
-            print 'Factorial of ', number, ' is', factorial
-                
-    else:
-        print 'Sorry, factorial does not exist of negative number '
+natural_number = int(raw_input('Enter the natural number '))
 
 
-        
-'''
-Python program to display multiplication table up to 10
-'''
+sum_of_natural_number=0
+while (natural_number > 0):
+    sum_of_natural_number+= natural_number
+    natural_number-= 1
+# for i in range(0,natural_number+1):
+#     sum+= i
+print sum_of_natural_number
 
-number_for_multiplication_table = int(raw_input('Enter a number for multiplication table'))
-for i in range(1, 10+1):
-    print  number_for_multiplication_table, 'X', i, '=', i*number_for_multiplication_table
 
-'''
-Python program to print the Fibonacci sequence
-'''
     
-number_for_fibonacci_sequence = float(raw_input('Enter a number for fibonacci sequence'))
-n1 = 0
-n2 = 1
-count_of_sequence = 2
-end = ' ,'
-# check if the number of terms is valid
-if number_for_fibonacci_sequence <= 0:
-    print 'Please enter a positive number'
-elif number_for_fibonacci_sequence == 1:
-    print 'Fibonacci sequence:'
-    print n1
-else:
-    print 'Fibonacci sequence:'
-    print  n1, ',', n2, end
-    while  count_of_sequence < number_for_fibonacci_sequence:
-        nth = n1 +n2
-        print nth, end
-        # update values
-        n1 = n2
-        n2 = nth
-        count_of_sequence += 1
 
 
