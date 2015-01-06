@@ -20,6 +20,20 @@ print 'AdressBook'
 address_book_path = r'D:\python\adresses.txt'
 address_book = {} # address book held in memory before dumped to file (baceno u fajl)
 email_pattern = r'(\w[\w]*)@([\w]+\.[\w]+)'
+'''
+r'' or r ""  allows you to specify regular expression patterns without having to escape embedded 
+\w  === word character
+[] === any character listed, or contained within a listed range
+(...) or (?P<name> ...) group subpattern and capture submatch into named capture group, name
+* match 0 or more times
++ match 1 or more times
+? match 1 or 0 times
+. any character except a newline
+$ End of each sting, or the point before a string-ending newline, or before any newline in MULTILINE match mode
+\d Digit character [0-9]
+\D Nondigit character [^0-9]
+(?:...) Groups subpattern, but does not capture submatch
+'''
 record_delimiter = '|'
  # split name | email in file
 
